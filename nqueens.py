@@ -52,23 +52,22 @@ def queens(position, size):
                 for i in range(len(mylist)):
                     if len(mylist[i]) == 3:
                         mylist[i] = mylist[i][0] + '0'
-                return mylist
+                return ','.join(mylist)
                     
         j = random.randint(0,size-1)
-        
-        for i,j in [(i,j) for i in range(size)]:
-            #print(table)
-            queen_pos = queenPos(table,j)
-            #print(table)
-            cost_before = cost(table, queen_pos)
-            #print(table)
-            if queen_pos != None:
-                table[queen_pos] = 0
-            #print(table)
-            table[(i,j)] = 1
-            #
-            if cost(table, queenPos(table,j)) > cost_before:
+        if j !=poz[1]
+            for i,j in [(i,j) for i in range(size)]:
+                #print(table)
+                queen_pos = queenPos(table,j)
+                #print(table)
+                cost_before = cost(table, queen_pos)
+                #print(table)
                 if queen_pos != None:
-                    table[(i,j)] = 0
-                    table[queen_pos] = 1
-print(queens('a3',10))
+                    table[queen_pos] = 0
+                #print(table)
+                table[(i,j)] = 1
+                #
+                if cost(table, queenPos(table,j)) > cost_before:
+                    if queen_pos != None:
+                        table[(i,j)] = 0
+                        table[queen_pos] = 1
